@@ -15,9 +15,9 @@ export async function getSubmissions(
 
   const mapToSubmission = (doc: any): Submission => ({
     id: doc.id,
-    classroom: typeof doc.classroom === 'string' ? doc.classroom : doc.classroom?.id,
-    assignment: typeof doc.assignment === 'string' ? doc.assignment : doc.assignment?.id,
-    student: typeof doc.student === 'string' ? doc.student : doc.student?.id,
+    classroom: typeof doc.classroom === 'string' ? doc.classroom : doc.classroom?.name,
+    assignment: typeof doc.assignment === 'string' ? doc.assignment : doc.assignment?.title,
+    student: typeof doc.student === 'string' ? doc.student : doc.student?.name,
     file: doc.file,
     grade: doc.grade,
     feedback: doc.feedback,
